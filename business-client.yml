@@ -1,12 +1,12 @@
-server:
+https://github.com/Prajwal-Raichan/config-server/blob/master/business-client.ymlserver:
   port: 8787
 
 merin:
-  message: Hi,this message is from GitHub!
+  message: Hi,this message is from GitHub
 
 spring:
   application:
-    name: discovery-client
+    name: business-client
   profiles:
     active: dev
 
@@ -30,14 +30,13 @@ eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
-    service-url:
+    serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-    discoveryApiUrl: http://GREET-DISCOVERY-CLIENT/api/greet
 
 logging:
   level:
     root: INFO
-    com.merin.discoveryClient: TRACE
+    com.merin.businessClient: TRACE
   file:
-    name: Global-Logs/discovery-client.log
+    name: Global-Logs/business-client.log
 
