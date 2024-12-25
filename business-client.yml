@@ -1,10 +1,5 @@
-https://github.com/Prajwal-Raichan/config-server/blob/master/business-client.ymlserver:
-  port: 8787
-
-merin:
-  message: Hi,this message is from GitHub
-
-spring:
+https://github.com/Prajwal-Raichan/config-server/blob/master/business-client.yml server:
+  spring:
   application:
     name: business-client
   profiles:
@@ -12,26 +7,33 @@ spring:
 
   cloud:
     config:
+      uri: http://localhost:8001
       discovery:
         enabled: true
         serviceId: config-server
-      fall-fast: true
+      fail-fast: true
       retry:
         initialInterval: 2000
         maxAttempts: 10
+
   mvc:
     servlet:
       load-on-startup: 1
 
+server:
+  port: 8787
+
 eureka:
   instance:
+    leaseRenewalIntervalInSeconds: 1
     prefer-ip-address: true
-    hostname: Discovery-Client
+    hostname: Business-Client
   client:
     register-with-eureka: true
     fetch-registry: true
-    serviceUrl:
+    service-url:
       defaultZone: http://localhost:8761/eureka/
+    registryFetchIntervalSeconds: 1
 
 logging:
   level:
