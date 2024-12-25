@@ -1,0 +1,43 @@
+server:
+  port: 8787
+
+merin:
+  message: Hi,this message is from GitHub!
+
+spring:
+  application:
+    name: discovery-client
+  profiles:
+    active: dev
+
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: config-server
+      fall-fast: true
+      retry:
+        initialInterval: 2000
+        maxAttempts: 10
+  mvc:
+    servlet:
+      load-on-startup: 1
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: Discovery-Client
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    discoveryApiUrl: http://GREET-DISCOVERY-CLIENT/api/greet
+
+logging:
+  level:
+    root: INFO
+    com.merin.discoveryClient: TRACE
+  file:
+    name: Global-Logs/discovery-client.log
+
