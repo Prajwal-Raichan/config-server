@@ -1,2 +1,5 @@
+spring:
+  profiles:
+    active: dev
 service:
   name: DevGitHub
