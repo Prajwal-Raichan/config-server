@@ -6,6 +6,8 @@ spring:
     config:
       uri: http://localhost:8001
       enabled: true
+  profiles:
+   active: dev
 
 
 merin:
