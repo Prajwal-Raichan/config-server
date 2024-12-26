@@ -1,0 +1,25 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: discovery-server
+
+  profiles:
+    active: dev
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
+
+logging:
+  level:
+    root: INFO
+    com.merin.discoveryServer: TRACE
+  file:
+    name: Global-Logs/discovery-server.log
+
+
