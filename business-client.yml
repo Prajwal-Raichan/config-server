@@ -1,8 +1,6 @@
 spring:
   application:
     name: business-client
-  profiles:
-    active: dev
 
 merin:
   message: Hi this is from GitHub
