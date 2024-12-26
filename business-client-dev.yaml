@@ -5,7 +5,7 @@ spring:
     active: dev
 
 merin:
-  message: Hi this is from GitHub
+  message: "Hi this is from GitHub"
 
   cloud:
     config:
